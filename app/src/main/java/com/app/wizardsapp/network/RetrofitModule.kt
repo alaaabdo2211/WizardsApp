@@ -1,7 +1,7 @@
 package com.app.wizardsapp.network
 
 import com.app.wizardsapp.BASE_URL
-import com.app.wizardsapp.data.WizardsRepository
+import com.app.wizardsapp.data.ApiRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,7 +30,7 @@ object RetrofitModule {
     }
 
     @Provides
-    fun provideWizardsRepository(apiService: ApiService): WizardsRepository {
-        return WizardsRepository(apiService)
+    fun provideWizardsRepository(apiService: ApiService): ApiRepository {
+        return ApiRepository(apiService)
     }
 }

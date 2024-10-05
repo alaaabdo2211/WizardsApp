@@ -16,15 +16,22 @@ fun AppNavigation(navController: NavHostController) {
         }
 
         composable(
-            Screens.WizardDetails.name + "{/itemId}",
-            arguments = listOf(navArgument("itemId") { type = NavType.StringType })
+            Screens.WizardDetails.name + "/{itemId}" + "/{itemName}",
+            arguments = listOf(navArgument("itemId") { type = NavType.StringType }, navArgument("itemName"){type = NavType.StringType})
         ) { backStackEntry ->
             val itemId = backStackEntry.arguments?.getString("itemId")
-            WizardDetails(navController = navController, itemId.toString())
+            val itemName = backStackEntry.arguments?.getString("itemName")
+
+            WizardDetails(navController = navController, itemId.toString() , itemName.toString())
         }
 
-        composable(Screens.Elixirs.name) {
-            WizardsScreen(navController = navController)
+        composable(  Screens.Elixirs.name + "/{elixirsId}" + "/{elixirsName}",
+            arguments = listOf(navArgument("elixirsId") { type = NavType.StringType }, navArgument("elixirsName"){type = NavType.StringType})
+        ) {backStackEntry ->
+            val elixirsId = backStackEntry.arguments?.getString("elixirsId")
+            val elixirsName = backStackEntry.arguments?.getString("elixirsName")
+
+            ElixirsScreen(navController = navController, elixirsId.toString() , elixirsName.toString())
         }
 
 

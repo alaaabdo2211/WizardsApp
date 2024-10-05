@@ -5,7 +5,7 @@ import com.app.wizardsapp.data.remote.WizardsByIdModel
 import com.app.wizardsapp.data.remote.WizardsModel
 import com.app.wizardsapp.network.ApiService
 
-class WizardsRepository(private val apiService: ApiService) {
+class ApiRepository(private val apiService: ApiService) {
 
     suspend fun getWizards(): WizardsModel {
         return apiService.getWizards()

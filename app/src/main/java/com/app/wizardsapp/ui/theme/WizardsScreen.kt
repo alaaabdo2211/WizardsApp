@@ -44,14 +44,6 @@ fun WizardsScreen(navController: NavController) {
         viewModel.fetchWizards()
 
     }
-    Text( modifier = Modifier.clickable {
-        Toast.makeText(context,"Clicked" ,Toast.LENGTH_SHORT).show()
-
-    },
-        text = "Clickkkkkkkk",
-        color = Color.Black,
-
-        )
     when (wizardsList) {
         is ApiState.Loading -> {
             CircularProgressIndicator()
@@ -69,22 +61,19 @@ fun WizardsScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(10.dp),
                         shape = RoundedCornerShape(12.dp),
-                        onClick = {
-//                            Toast.makeText(context,item.id ,Toast.LENGTH_SHORT).show()
-                            navController.navigate(Screens.WizardDetails.name + "/${item.id}") }
 
                     ) {
+
                         Row(
                             modifier = Modifier.padding(10.dp).clickable {
-                                                            Toast.makeText(context,item.id ,Toast.LENGTH_SHORT).show()
-                                navController.navigate(Screens.WizardDetails.name + "/${item.id}")
+                                navController.navigate(Screens.WizardDetails.name + "/${item.id}" + "/${item.firstName +" " + item.lastName}")
 
                     },
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
                                 modifier = Modifier.weight(3f),
-                                text = item.firstName ?: "Unknown Wizard",
+                                text = item.firstName + " " + item.lastName,
                                 color = Color.Black,
 
                             )

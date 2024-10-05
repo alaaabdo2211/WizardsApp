@@ -6,3 +6,4 @@ data class WizardsByIdModel(
     val id: String,
     val lastName: String
 )
+

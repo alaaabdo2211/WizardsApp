@@ -5,7 +5,7 @@ data class ElixirsIdModel(
     val difficulty: String,
     val effect: String,
     val id: String,
-    val ingredients: List<Any>,
+    val ingredients: List<Ingredients>,
     val inventors: List<Inventor>,
     val manufacturer: Any,
     val name: String,
@@ -17,4 +17,9 @@ data class Inventor(
     val firstName: Any,
     val id: String,
     val lastName: String
+)
+
+data class Ingredients(
+    val id: String,
+    val name: String,
 )
