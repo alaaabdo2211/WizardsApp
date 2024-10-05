@@ -1,20 +1,20 @@
 package com.app.wizardsapp.data.remote
 
 data class ElixirsIdModel(
-    val characteristics: Any,
+    val characteristics: String,
     val difficulty: String,
     val effect: String,
     val id: String,
     val ingredients: List<Ingredients>,
     val inventors: List<Inventor>,
-    val manufacturer: Any,
+    val manufacturer: String,
     val name: String,
-    val sideEffects: Any,
-    val time: Any
+    val sideEffects: String,
+    val time: String
 )
 
 data class Inventor(
-    val firstName: Any,
+    val firstName: String,
     val id: String,
     val lastName: String
 )

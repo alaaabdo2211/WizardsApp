@@ -16,13 +16,16 @@ composeBom = "2024.09.03"
 lifecycleRuntimeKtxVersion = "2.8.6"
 okhttp = "4.12.0"
 retrofit = "2.10.0"
-appcompat = "1.6.1"
-material = "1.10.0"
+appcompat = "1.7.0"
+material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
-room ="2.5.2"
-gson = "2.8.9"
-
+room ="2.6.1"
+gson = "2.10.1"
+mockito-core = "4.0.0"
+mockito-kotlin = "4.0.0"
+kotlinx-coroutines-test = "1.7.3"
+androidx-core-testing = "2.2.0"
 
 
 [libraries]
@@ -58,6 +61,10 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-core-testing" }
 
 
 [plugins]

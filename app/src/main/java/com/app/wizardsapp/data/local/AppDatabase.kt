@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.app.wizardsapp.utils.Convertors
 
-@Database(entities = [Wizards::class, WizardsByIdData::class, ElixirsByIdData::class], version = 1)
+@TypeConverters(Convertors::class)
+@Database(entities = [Wizards::class, ElixirsByIdData::class, WizardsByIdData::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun wizardsDao(): WizardsDoa
-    abstract fun wizardsByIdDao(): WizardByIdDoa
-    abstract fun elixirsByIdDao(): ElixirsByIdDoa
 
     companion object {
         @Volatile

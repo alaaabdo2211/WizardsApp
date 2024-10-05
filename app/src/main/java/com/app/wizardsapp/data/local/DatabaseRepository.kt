@@ -1,31 +1,31 @@
 package com.app.wizardsapp.data.local
 
-import com.app.wizardsapp.data.remote.ElixirsIdModel
-import com.app.wizardsapp.data.remote.WizardsByIdModel
-import com.app.wizardsapp.data.remote.WizardsModel
-class DatabaseRepository (private val wizardsDoa: WizardsDoa,private val wizardByIdDoa: WizardByIdDoa,private val elixirsByIdDoa: ElixirsByIdDoa){
+import javax.inject.Inject
 
-        suspend fun getWizards() : Wizards {
-            return wizardsDoa.getWizards()
-        }
+class DatabaseRepository @Inject constructor(private val wizardsDoa: WizardsDoa) {
+
+    suspend fun getWizards(): List<Wizards> {
+        return wizardsDoa.getWizards()
+    }
+
     suspend fun saveWizards(wizardsModel: Wizards) {
         wizardsDoa.insertWizards(wizardsModel)
     }
 
 
-    suspend fun getWizardsById(): WizardsByIdData {
-        return wizardByIdDoa.getWizardsById()
+    suspend fun getWizardsById(id: String): WizardsByIdData? {
+        return wizardsDoa.getWizardsById(id)
     }
     suspend fun saveWizardsById(wizardsByIdModel: WizardsByIdData) {
-        wizardByIdDoa.insertWizardsById(wizardsByIdModel)
+        wizardsDoa.insertWizardsById(wizardsByIdModel)
     }
 
 
-    suspend fun getElixirsById(): ElixirsByIdData {
-        return elixirsByIdDoa.getElixirsById()
+    suspend fun getElixirsById(id: String): ElixirsByIdData? {
+        return wizardsDoa.getElixirsById(id)
     }
     suspend fun saveElixirsById(elixirsIdModel: ElixirsByIdData) {
-        elixirsByIdDoa.insertElixirsById(elixirsIdModel)
+        wizardsDoa.insertElixirsById(elixirsIdModel)
     }
 
 }

@@ -78,12 +78,22 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx.v251)
 
-
+    //Room
     implementation libs.room.runtime
     kapt libs.room.compiler
     implementation libs.room.ktx
 
+    //Gson
     implementation libs.gson
+
+    //Testing
+    // Unit Testing
+    testImplementation libs.junit
+
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.androidx.core.testing
 
 
     implementation libs.androidx.ui
